@@ -58,7 +58,7 @@ body{
     padding: 25px 30px;
 }
 
-.functions>div{
+.functions>button{
     background-color: #544e4e;
     color: white;
     font-family: 'poppins', sans-serif;
@@ -73,14 +73,14 @@ body{
     transition: all 0.3s ease;
 }
 
-.functions>div:hover{
+.functions>button:hover{
     /* key move up */
     transform: translateY(-5px);
     background-color: #bdbdbd;
     color: black;
 
 }
-.functions>div:active{
+.functions>button:active{
     /* key move down */
     transform: translateY(5px);
     color: black;
