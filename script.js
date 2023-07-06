@@ -25,20 +25,23 @@ function divide(num1,num2){
 
 function operate(num1,num2,operator){
 
+
+    console.log("operator function runs");
+
     if (operator == "+"){
 
-        add(num1,num2);
+        return add(num1,num2);
     } 
     else if(operator == "-"){
 
-        substract(num1,num2);
+        return substract(num1,num2);
     }
     else if(operator == "x"){
-        multiply(num1,num2);
+        return multiply(num1,num2);
     }
     else if(operator == "/"){
 
-        divide(num1,num2);
+        return divide(num1,num2);
     }
 
 }
@@ -65,7 +68,7 @@ buttons.forEach(button => {
         
         else if(button.classList.contains("Operator")){
             
-            number1 = parseInt(display.innerText);
+            number1 = parseFloat(display.innerText);
             
             operator = button.innerText;
     
@@ -73,14 +76,20 @@ buttons.forEach(button => {
         }
         else if(button.classList.contains("equal")){
 
-            number2 = parseInt(display.innerText);
-            display.innerText = operate(number1,number2,operator);
+            number2 = parseFloat(display.innerText);
+
+            display.innerText = `${operate(number1,number2,operator)}`
 
         }
         
         else if(button.classList.contains("clear")){
-            
+
             display.innerText = "";
         }
     });
 });
+
+
+
+
+
