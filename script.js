@@ -36,7 +36,7 @@ function operate(num1,num2,operator){
     else if(operator == "x"){
         multiply(num1,num2);
     }
-    else if(operate == "/"){
+    else if(operator == "/"){
 
         divide(num1,num2);
     }
@@ -55,20 +55,31 @@ let operator = null;
 buttons.forEach(button => {
 
     button.addEventListener("click", function(){
+
         if(button.classList.contains("number")){
 
             display.innerText += button.innerText;
+
         }
-        else if(button.ClassList.contains("operator")){
-            number1 = display.innerText;
+        
+        
+        else if(button.classList.contains("Operator")){
+            
+            number1 = parseInt(display.innerText);
+            
             operator = button.innerText;
+    
             display.innerText = "";
         }
-        else if(button.ClassList.contains("equal")){
-            number2 = display.innerText;
+        else if(button.classList.contains("equal")){
+
+            number2 = parseInt(display.innerText);
             display.innerText = operate(number1,number2,operator);
+
         }
-        else if(button.ClassList.contains("clear")){
+        
+        else if(button.classList.contains("clear")){
+            
             display.innerText = "";
         }
     });
